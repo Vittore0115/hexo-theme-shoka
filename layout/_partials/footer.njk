@@ -1,8 +1,8 @@
 <div class="status">
   <div class="copyright">
     {% set copyright_year = date(null, 'YYYY') %}
-    &copy; {% if theme.footer.since and theme.footer.since != copyright_year %}{{ theme.footer.since }} – {% endif %}
-    <span itemprop="copyrightYear">{{ copyright_year }}</span>
+    &copy; {% if theme.footer.since and theme.footer.since != copyright_year %}
+    <span>{{'ICP备案号:'}}</span><a class="theme-link" target="_blank" href="https://beian.miit.gov.cn/">{{'粤ICP备2021021858号'}}</a>
     <span class="with-love">
       <i class="ic i-{{ theme.footer.icon.name }}"></i>
     </span>
@@ -26,6 +26,8 @@
 
   {%- if theme.footer.powered %}
   <div class="powered-by">
+    {{ theme.footer.since }} – {% endif %}
+    <span itemprop="copyrightYear">{{ copyright_year }}</span>
     {{ __('footer.powered', _url('https://hexo.io', 'Hexo') + ' & Theme.' + _url('https://github.com/amehime/hexo-theme-shoka', 'Shoka')) }}
   </div>
   {%- endif %}
